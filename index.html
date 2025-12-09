@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechNinjas - Profissionais de TI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>TechNinjas</h1>
+      <p>Encontre profissionais de TI rapidamente</p>
+    </header>
+
+    <section class="search-section" role="region" aria-label="Controles de busca e filtros">
+      <div class="controls">
+        <input id="search" type="search" placeholder="Buscar por nome, skill ou cidade" aria-label="Buscar profissionais" />
+        <button id="searchBtn" class="btn">Pesquisar</button>
+      </div>
+
+      <button class="small-btn" id="showAll">Mostrar todos os profissionais</button>
+
+      <input id="refineSearch" type="search" placeholder="Refinar busca..." />
+
+      <div class="filters">
+        <select id="roleFilter" aria-label="Filtro por função">
+          <option value="">Todas as funções</option>
+        </select>
+
+        <select id="orderFilter" aria-label="Ordenar por">
+          <option value="relevance">Relevância</option>
+          <option value="rating">Avaliação</option>
+          <option value="reviews">Número de avaliações</option>
+        </select>
+
+        <button class="small-btn" id="favoritesBtn">⭐ Favoritos</button>
+        <button class="small-btn" id="clearBtn">Limpar</button>
+      </div>
+    </section>
+
+    <div id="count" aria-live="polite" class="count">0 profissionais encontrados</div>
+
+    <section id="professionals" class="professionals-list" aria-live="polite" aria-atomic="true">
+      <!-- Cards gerados dinamicamente aqui -->
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar modal" id="modalClose">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
